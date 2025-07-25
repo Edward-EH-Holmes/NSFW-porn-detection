@@ -6,7 +6,7 @@ if __name__ == "__main__":
     classifier = setup_nsfw()  # 使用默认模型路径
 
     # 这里添加指定测试图片目录
-    image_dir = 'G:/File/Secret/10010/军事速递/色图/ATFM Tsubaki'
+    image_dir = 'C:/Users/Edward/Desktop/新建文件夹/1'
 
     # 初始化统计列表
     nsfw_files = []      # 色情图片文件名列表 (文件名, result, result2)
@@ -40,17 +40,20 @@ if __name__ == "__main__":
                 print(f"[ERROR] Failed to process {file}: {e}")
 
     # 输出统计结果
-    print(f"色情图片总数：{len(nsfw_files)}")
-    print("所有色情图片文件名及检测结果：")
-    for file_info in nsfw_files:
-        print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
+    if len(nsfw_files)!=0:
+        print(f"色情图片总数：{len(nsfw_files)}")
+        print("所有色情图片文件名及检测结果：")
+        for file_info in nsfw_files:
+            print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
+
+    if len(near_nsfw_files)!=0:
+        print(f"\n疑似色情图片总数：{len(near_nsfw_files)}")
+        print("所有疑似色情图片文件名及检测结果：")
+        for file_info in near_nsfw_files:
+            print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
     
-    print(f"\n非色情图片总数：{len(safe_files)}")
-    print("所有非色情图片名及检测结果：")
-    for file_info in safe_files:
-        print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
-    
-    print(f"\n疑似色情图片总数：{len(near_nsfw_files)}")
-    print("所有疑似色情图片文件名及检测结果：")
-    for file_info in near_nsfw_files:
-        print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
+    if len(safe_files)!=0:
+        print(f"\n非色情图片总数：{len(safe_files)}")
+        print("所有非色情图片名及检测结果：")
+        for file_info in safe_files:
+            print(f"{file_info[0]} | result: {file_info[1]:.5f} | result2: {file_info[2]}")
