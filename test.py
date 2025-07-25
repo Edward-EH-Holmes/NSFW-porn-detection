@@ -6,7 +6,7 @@ if __name__ == "__main__":
     classifier = setup_nsfw()  # 使用默认模型路径
 
     # 这里添加指定测试图片目录
-    image_dir = 'C:/Users/Edward/Desktop/新建文件夹/1'
+    image_dir = 'G:/File/Secret/10010/军事速递/色图/杪夏Babydoll/杪夏Babydoll（小恶魔）'
 
     # 初始化统计列表
     nsfw_files = []      # 色情图片文件名列表 (文件名, result, result2)
